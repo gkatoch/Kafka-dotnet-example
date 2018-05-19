@@ -1,0 +1,33 @@
+﻿<Window x:Class="KafkaProducerUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KafkaProducerUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto" MinWidth="400"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="KAFKA PRODUCER" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <Label Grid.Row="1" Grid.Column="0" Content="Enter Topic Name:"/>
+        <TextBox Text="{Binding Topic, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Enter Message:"/>
+        <TextBox Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1"/>
+
+        <Button Command="{Binding SendTopic}" Grid.Row="3" Grid.Column="0" Width="100" Content="Send Topic"/>
+        
+    </Grid>
+</Window>
